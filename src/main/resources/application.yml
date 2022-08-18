@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: SpringBoot_mrt
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://bj-cdb-n2w905ac.sql.tencentcdb.com:60037/mybatis?characterEncoding=utf-8
+    username: wxs
+    password: 20021004mrt!
+    type: com.alibaba.druid.pool.DruidDataSource
+  # 放行静态资源
+  mvc:
+    static-path-pattern: /static/**
+  resources:
+    static-locations: classpath:/static/
+server:
+  port: 8080
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+

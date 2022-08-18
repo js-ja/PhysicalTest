@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+  namespace:名称空间
+-->
+<mapper namespace="com.mrt.dao.mapper.PhysicalTestMapper">
+    <select id="selectAll" resultType="com.mrt.domain.PhysicalTestProject">
+        select * from #{database};
+    </select>
+    <select id="count" resultType="java.lang.Integer">
+        select count(*) from Student_test_data_in_2017;
+    </select>
+
+</mapper>
