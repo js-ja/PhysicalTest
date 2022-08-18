@@ -14,6 +14,7 @@ public class PhysicalTestProject {
     private String theClassName;
     private Float height;
     private Float weight;
+    // 体重/身高^2 (kg/m)
     private Float bmi;
     // 肺活量
     @TableField(value = "vitalCapacity")
@@ -65,4 +66,5 @@ public class PhysicalTestProject {
     private String healthLevel;
     // 体测年份
     private Integer date;
+
 }

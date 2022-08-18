@@ -17,13 +17,15 @@ class SpringBootMrtApplicationTests {
 
     @Test
     void contextLoads() {
-
+        String string = "123";
+        System.out.println("124".equals(string));
 
     }
     @Test
     void find() {
         Integer count = physicalTestMapper.count();
         System.out.println(count);
+
     }
     @Test
     void find2() {

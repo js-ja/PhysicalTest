@@ -3,6 +3,7 @@ package com.mrt.controller;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.api.R;
 import com.mrt.domain.Code;
+import com.mrt.domain.PhysicalTest;
 import com.mrt.domain.PhysicalTestProject;
 import com.mrt.domain.Result;
 import com.mrt.service.PhysicalTestService;
@@ -35,9 +36,12 @@ public class PhysicalTestController {
         return new Result(code,physicalTestProjects,msg);
     }
     @PostMapping
-    public void selectList(PhysicalTestProject ptp) {
+    public void selectCount(PhysicalTest pt) {
         LambdaQueryWrapper<PhysicalTestProject> lqw = new LambdaQueryWrapper<>();
+        lqw.eq(PhysicalTestProject::getSex,pt.getSex());
+        lqw.lt(PhysicalTestProject::getHeight,pt.getHeight());
         Integer list = physicalTestService.selectCount(lqw);
 
     }
+
 }
