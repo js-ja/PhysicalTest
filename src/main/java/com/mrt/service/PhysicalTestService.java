@@ -9,4 +9,29 @@ public interface PhysicalTestService {
     List<PhysicalTestProject> selectAll(String database);
 
     Integer selectCount(LambdaQueryWrapper<PhysicalTestProject> lqw);
+    /*平均身高*/
+    Float AvgHeight();
+    /*平均体重*/
+    Float AvgWeight();
+    /*最高身高*/
+    Float MaxHeight();
+    /*最重体重*/
+    Float MaxWeight();
+    /*最低身高*/
+    Float MinHeight();
+    /*最轻体重*/
+   Float MinWeight();
+   Float MaxvitalCapacity();
+   Float MinvitalCapacity();
+   Float MaxRunThe50m();
+   Float MinRunThe50m();
+   Float MaxstandingBroadJump();
+   Float MinstandingBroadJump();
+   Float MaxRunThe1000mor800m();
+   Float MinRunThe1000mor800m();
+   Float MaxsitAndReach();
+   Float MinsitAndReach();
+   Float MaxSitupsOrPullups();
+   Float MinSitupsOrPullups();
+
 }

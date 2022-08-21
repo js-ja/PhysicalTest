@@ -27,5 +27,5 @@ public class PhysicalTest {
     @TableField(value = "SitupsOrPullups")
     private Float SitupsOrPullups;
     // 体测年份
-    private Integer date;
+    private Integer[] date;
 }

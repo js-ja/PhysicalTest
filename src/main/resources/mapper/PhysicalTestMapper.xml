@@ -12,5 +12,58 @@
     <select id="count" resultType="java.lang.Integer">
         select count(*) from Student_test_data_in_2017;
     </select>
-
+    <select id="AvgHeight" resultType="java.lang.Float">
+        select avg(height) from Student_test_data;
+    </select>
+    <select id="AvgWeight" resultType="java.lang.Float">
+        select avg(weight) from Student_test_data;
+    </select>
+    <select id="MaxHeight" resultType="java.lang.Float">
+        select max(height) from Student_test_data;
+    </select>
+    <select id="MaxWeight" resultType="java.lang.Float">
+        select max(weight) from Student_test_data;
+    </select>
+    <select id="MinHeight" resultType="java.lang.Float">
+        select min(height) from Student_test_data;
+    </select>
+    <select id="MinWeight" resultType="java.lang.Float">
+        select min(weight) from Student_test_data;
+    </select>
+    <select id="MaxvitalCapacity" resultType="java.lang.Float">
+        select max(vitalCapacity) from Student_test_data;
+    </select>
+    <select id="MinvitalCapacity" resultType="java.lang.Float">
+        select min(vitalCapacity) from Student_test_data;
+    </select>
+    <select id="MaxRunThe50m" resultType="java.lang.Float">
+        select max(RunThe50m) from Student_test_data;
+    </select>
+    <select id="MinRunThe50m" resultType="java.lang.Float">
+        select min(RunThe50m) from Student_test_data;
+    </select>
+    <select id="MaxstandingBroadJump" resultType="java.lang.Float">
+        select max(standingBroadJump) from Student_test_data;
+    </select>
+    <select id="MinstandingBroadJump" resultType="java.lang.Float">
+        select min(standingBroadJump) from Student_test_data;
+    </select>
+    <select id="MaxRunThe1000mor800m" resultType="java.lang.Float">
+        select max(RunThe1000mor800m) from Student_test_data;
+    </select>
+    <select id="MinRunThe1000mor800m" resultType="java.lang.Float">
+        select min(RunThe1000mor800m) from Student_test_data;
+    </select>
+    <select id="MaxsitAndReach" resultType="java.lang.Float">
+        select max(sitAndReach) from Student_test_data;
+    </select>
+    <select id="MinsitAndReach" resultType="java.lang.Float">
+        select min(sitAndReach) from Student_test_data;
+    </select>
+    <select id="MaxSitupsOrPullups" resultType="java.lang.Float">
+        select max(SitupsOrPullups) from Student_test_data;
+    </select>
+    <select id="MinSitupsOrPullups" resultType="java.lang.Float">
+        select min(SitupsOrPullups) from Student_test_data;
+    </select>
 </mapper>

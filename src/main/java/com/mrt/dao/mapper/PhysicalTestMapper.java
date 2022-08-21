@@ -12,4 +12,23 @@ public interface PhysicalTestMapper extends BaseMapper<PhysicalTestProject> {
 
     Integer count();
 
+    Float AvgHeight();
+    Float AvgWeight();
+    Float MaxHeight();
+    Float MaxWeight();
+    Float MinHeight();
+    Float MinWeight();
+    Float MaxvitalCapacity();
+    Float MinvitalCapacity();
+    Float MaxRunThe50m();
+    Float MinRunThe50m();
+    Float MaxstandingBroadJump();
+    Float MinstandingBroadJump();
+    Float MaxRunThe1000mor800m();
+    Float MinRunThe1000mor800m();
+    Float MaxsitAndReach();
+    Float MinsitAndReach();
+    Float MaxSitupsOrPullups();
+    Float MinSitupsOrPullups();
+
 }

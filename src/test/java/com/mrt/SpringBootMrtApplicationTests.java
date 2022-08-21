@@ -7,8 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.List;
-
 @SpringBootTest
 class SpringBootMrtApplicationTests {
 
@@ -17,8 +15,9 @@ class SpringBootMrtApplicationTests {
 
     @Test
     void contextLoads() {
-        String string = "123";
-        System.out.println("124".equals(string));
+        int[] ints = new int[]{};
+        System.out.println(ints.length);
+
 
     }
     @Test

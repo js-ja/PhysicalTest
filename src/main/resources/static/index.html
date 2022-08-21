@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+<script src="js/vue.js"></script>
+<script src="js/axios-0.18.0.js"></script>
+
+<div id="app">
+    <a @click="selectCount()">点击</a>
+    <a @click="select()">FIN</a>
+</div>
+
+<script>
+    new Vue({
+        el:"#app",
+        methods: {
+            select() {
+                var that = this;
+                axios({
+                    method:"get",
+                    url:that.urlpath+"/tools/waterRefill"+"?weight="+that.weight,
+                    contentType:"application/json;charset=UTF-8",
+                }).then(function (resp) {
+                    console.log(resp.data.data);
+                })
+            },
+            selectCount() {
+                var that = this;
+                axios({
+                    method:"post",
+                    url:that.urlpath+"/physicaltests/selectByDates",
+                    data: that.dates,
+                    contentType:"application/json;charset=UTF-8",
+                }).then(function (resp) {
+                    console.log(resp.data);
+                })
+            },
+            selectfind() {
+                var that=this;
+                var arr =  {
+                    height: that.height,
+                    weight: that.weight
+                }
+                axios({
+                    method:"post",
+                    url:that.urlpath+"/physicaltests/find",
+                    data: arr,
+                    contentType:"application/json;charset=UTF-8",
+                }).then(function (resp) {
+                    console.log(resp.data);
+                })
+            }
+        },
+        data() {
+            return {
+                dates: [2017,2016],
+                array: [],
+                object: {
+                    height: 100,
+                    weight: 10,
+                },
+                height: 180,
+                weight: 70,
+                urlpath: "http://localhost:8080"
+            }
+        }
+    })
+</script>
+
+</body>
+
+</html>
