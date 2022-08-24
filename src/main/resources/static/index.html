@@ -11,10 +11,13 @@
 
 <script src="js/vue.js"></script>
 <script src="js/axios-0.18.0.js"></script>
+<script src="element-ui/lib/index.js"></script>
+<link rel="stylesheet" href="element-ui/lib/theme-chalk/index.css">
 
 <div id="app">
-    <a @click="selectCount()">点击</a>
-    <a @click="select()">FIN</a>
+    <el-row>
+        <el-button type="primary" @click="selectCount()">主要按钮</el-button>
+    </el-row>
 </div>
 
 <script>
@@ -68,7 +71,7 @@
                 },
                 height: 180,
                 weight: 70,
-                urlpath: "http://localhost:8080"
+                urlpath: "https://physical-test.vercel.app"
             }
         }
     })

@@ -119,6 +119,7 @@ public class ToolsController {
         map.put("basalMetabolism",basalMetabolism);
         return new Result(Code.GET_OK,map,"");
     }
-    /**/
+    /*运动热量计算器*/
+
 
 }
