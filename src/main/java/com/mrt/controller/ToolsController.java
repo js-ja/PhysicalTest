@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.extension.api.R;
 import com.mrt.domain.Code;
 import com.mrt.domain.Result;
 import com.mrt.domain.tools.ProteinCalculator;
+import com.mrt.exception.BusinessException;
+import com.mrt.exception.SystemException;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.DecimalFormat;
@@ -60,6 +62,9 @@ public class ToolsController {
         Map map = (Map) data;
         float height = Float.parseFloat(map.get("height").toString())/100;
         float weight = Float.parseFloat(map.get("weight").toString());
+        if (height<=0|weight<=0) {
+            throw new SystemException("数据异常", Code.DATA_ERR);
+        }
         DecimalFormat decimalFormat=new DecimalFormat(".0");
         String bmi = decimalFormat.format(weight/(height*height));
         HashMap<String, Object> maps = new HashMap<>();
@@ -72,6 +77,9 @@ public class ToolsController {
         Map maps = (Map) data;
         int sex = Integer.parseInt(maps.get("sex").toString());
         float height = Float.parseFloat(maps.get("height").toString());
+        if (height<=0) {
+            throw new SystemException("数据异常", Code.DATA_ERR);
+        }
         DecimalFormat decimalFormat=new DecimalFormat(".0");
         String standardWeight=null;
         if (sex==1) {

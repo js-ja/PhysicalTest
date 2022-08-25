@@ -12,31 +12,13 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/physicaltests")
+@RequestMapping("/physical")
 public class PhysicalTestController {
 
 
 
     @Autowired
     private PhysicalTestService physicalTestService;
-
-    @GetMapping("/{date}")
-    public Result selectAll(@PathVariable Integer date) {
-        String database = null;
-        if (date == 2017) {
-            database = "Student_test_data_in_2017";
-        } else if (date == 2016) {
-            database = "Student_test_data_in_2016";
-        } else if (date == 2015) {
-            database = "Student_test_data_in_2015";
-        } else if (date == 2014) {
-            database = "Student_test_data_in_2014";
-        }
-        List<PhysicalTestProject> physicalTestProjects = physicalTestService.selectAll(database);
-        Integer code = physicalTestProjects!=null? Code.GET_OK:Code.GET_ERR;
-        String msg = physicalTestProjects!=null?"":"数据查询失败，请重试!";
-        return new Result(code,physicalTestProjects,msg);
-    }
     @PostMapping
     public Result selectCount(@RequestBody PhysicalTestQuery ptq) {
         LambdaQueryWrapper<PhysicalTestProject> lqw = new LambdaQueryWrapper<>();
@@ -98,6 +80,19 @@ public class PhysicalTestController {
         Float height = Float.valueOf(map.get("height").toString());
         Float weight = Float.valueOf(map.get("weight").toString());
     }
-
+    /*Personal physical test results 个人体测成绩*/
+    @PostMapping("/pptr")
+    private Result personalPhysicalTestResults(@RequestBody Object data) {
+        LambdaQueryWrapper<PhysicalTestProject> lqw = new LambdaQueryWrapper<>();
+        Map map = (Map) data;
+        Integer date = Integer.parseInt(map.get("date").toString());
+        String studentNumber = map.get("studentNumber").toString();
+        lqw.eq(PhysicalTestProject::getStudentNumber,studentNumber);
+        lqw.eq(PhysicalTestProject::getDate,date);
+        List<PhysicalTestProject> physicalTestProjects = physicalTestService.selectList(lqw);
+        Integer code = physicalTestProjects!=null? Code.GET_OK:Code.GET_ERR;
+        String msg = physicalTestProjects!=null?"":"查询条件不符合要求，请重试!";
+        return new Result(code,physicalTestProjects,msg);
+    }
 
 }

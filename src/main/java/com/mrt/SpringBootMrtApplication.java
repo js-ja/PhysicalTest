@@ -8,6 +8,8 @@ public class SpringBootMrtApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SpringBootMrtApplication.class, args);
+
+        System.out.println();
     }
 
 }

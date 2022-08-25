@@ -15,9 +15,10 @@ public class PhysicalTestServiceImpl implements PhysicalTestService {
     @Autowired
     private PhysicalTestMapper physicalTestMapper;
 
+
     @Override
-    public List<PhysicalTestProject> selectAll(String database) {
-        return physicalTestMapper.selectAll(database);
+    public List<PhysicalTestProject> selectList(LambdaQueryWrapper<PhysicalTestProject> lqw) {
+        return physicalTestMapper.selectList(lqw);
     }
 
     @Override

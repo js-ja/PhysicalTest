@@ -8,7 +8,6 @@ import java.util.List;
 
 @Mapper
 public interface PhysicalTestMapper extends BaseMapper<PhysicalTestProject> {
-    List<PhysicalTestProject> selectAll(String database);
 
     Integer count();
 

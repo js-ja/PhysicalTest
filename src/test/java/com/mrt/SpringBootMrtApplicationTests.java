@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
 @SpringBootTest
 class SpringBootMrtApplicationTests {
 
@@ -30,10 +32,9 @@ class SpringBootMrtApplicationTests {
     void find2() {
         LambdaQueryWrapper<PhysicalTestProject> lqw = new LambdaQueryWrapper<PhysicalTestProject>();
 
-        lqw.eq(PhysicalTestProject::getSex,'1');
-        lqw.between(PhysicalTestProject::getWeight,140/2,180/2);
-        Integer count = physicalTestMapper.selectCount(lqw);
-        System.out.println(count);
+        lqw.eq(PhysicalTestProject::getStudentNumber,"1110117");
+        List<PhysicalTestProject> physicalTestProjects = physicalTestMapper.selectList(lqw);
+        System.out.println(physicalTestProjects);
     }
 
 }

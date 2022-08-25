@@ -3,6 +3,7 @@ package com.mrt.controller;
 import com.mrt.domain.Code;
 import com.mrt.domain.Result;
 import com.mrt.exception.BusinessException;
+import com.mrt.exception.DataException;
 import com.mrt.exception.SystemException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -11,6 +12,10 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class ProjectExceptionAdvice {
     //@ExceptionHandler用于设置当前处理器类对应的异常类型
+    @ExceptionHandler({DataException.class})
+    public Result doBusinessException(DataException ex){
+        return new Result(ex.getCode(),null,ex.getMessage());
+    }
     @ExceptionHandler(SystemException.class)
     public Result doSystemException(SystemException ex){
         //记录日志

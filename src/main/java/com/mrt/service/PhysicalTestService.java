@@ -6,7 +6,7 @@ import com.mrt.domain.PhysicalTestProject;
 import java.util.List;
 
 public interface PhysicalTestService {
-    List<PhysicalTestProject> selectAll(String database);
+    List<PhysicalTestProject> selectList(LambdaQueryWrapper<PhysicalTestProject> lqw);
 
     Integer selectCount(LambdaQueryWrapper<PhysicalTestProject> lqw);
     /*平均身高*/
