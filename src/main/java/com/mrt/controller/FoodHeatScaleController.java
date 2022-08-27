@@ -22,7 +22,7 @@ import java.util.Map;
 public class FoodHeatScaleController {
     @Autowired
     private FoodHeatScaleService foodHeatScaleService;
-    @PostMapping("/")
+    @PostMapping("/foodHeat")
     public Result selectList(@RequestBody Object data) {
         Map maps = (Map) data;
         String foodName = maps.get("foodName").toString();
